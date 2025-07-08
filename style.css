@@ -43,13 +43,23 @@ body {
   margin-bottom: 1rem;
 }
 
-.control-btn {
+.play-pause-btn {
   font-size: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
 }
+
+.reset-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
 .rounds-left {
   font-size: 1.2rem;
@@ -107,10 +117,11 @@ body {
 
 /* High/Low intensity backgrounds (set via JS) */
 body.high {
-  background: #ff6700;
+  background: linear-gradient(300deg, #fe3d23, #fa294c);
 }
 body.low {
   background: #00cc9c;
+  background: linear-gradient(300deg, #00cc9c, #c2def5)
 }
 
 body.high, body.low {
@@ -121,3 +132,16 @@ body.high .modal-content,
 body.low .modal-content {
   color: #222;
 } 
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: #fff; /* Makes the icon white */
+  display: inline-block;
+  vertical-align: middle;
+} 
+
+.play-pause-btn .icon {
+  width: 100px;
+  height: 100px;
+}

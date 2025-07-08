@@ -28,6 +28,18 @@ const saveSettingsBtn = document.getElementById('save-settings-btn');
 const closeSettingsBtn = document.getElementById('close-settings-btn');
 const beepSound = document.getElementById('beep-sound');
 
+const playSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+</svg>
+`;
+
+const pauseSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+</svg>
+`;
+
 function loadSettings() {
   const saved = localStorage.getItem('hiit-settings');
   if (saved) {
@@ -43,7 +55,7 @@ function updateUI() {
   timerEl.textContent = formatTime(state.timeLeft);
   modeLabelEl.textContent = state.mode === 'high' ? 'Alta Intensidad' : 'Baja Intensidad';
   roundsLeftEl.textContent = `Rondas restantes: ${state.roundsLeft}`;
-  playPauseBtn.textContent = state.running ? '⏸️' : '▶️';
+  playPauseBtn.innerHTML = state.running ? pauseSVG : playSVG;
   document.body.classList.toggle('high', state.mode === 'high');
   document.body.classList.toggle('low', state.mode === 'low');
   document.querySelector('meta[name="theme-color"]').setAttribute('content', state.mode === 'high' ? '#ff4d4d' : '#4dff88');
@@ -85,13 +97,13 @@ function tick() {
 function startTimer() {
   if (state.running) return;
   state.running = true;
-  playPauseBtn.textContent = '⏸️';
+  playPauseBtn.innerHTML = pauseSVG;
   state.timerId = setInterval(tick, 1000);
 }
 
 function stopTimer() {
   state.running = false;
-  playPauseBtn.textContent = '▶️';
+  playPauseBtn.innerHTML = playSVG;
   if (state.timerId) clearInterval(state.timerId);
   state.timerId = null;
 }
