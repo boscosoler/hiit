@@ -58,7 +58,7 @@ function updateUI() {
   playPauseBtn.innerHTML = state.running ? pauseSVG : playSVG;
   document.body.classList.toggle('high', state.mode === 'high');
   document.body.classList.toggle('low', state.mode === 'low');
-  document.querySelector('meta[name="theme-color"]').setAttribute('content', state.mode === 'high' ? '#ff4d4d' : '#4dff88');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', state.mode === 'high' ? '#fe3d23' : '#c2def5');
 }
 
 function formatTime(sec) {

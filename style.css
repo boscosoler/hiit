@@ -117,11 +117,11 @@ body {
 
 /* High/Low intensity backgrounds (set via JS) */
 body.high {
-  background: linear-gradient(300deg, #fe3d23, #fa294c);
+  background: linear-gradient(0deg, #fa294c, #fe3d23);
 }
 body.low {
   background: #00cc9c;
-  background: linear-gradient(300deg, #00cc9c, #c2def5)
+  background: linear-gradient(0deg, #00cc9c, #c2def5)
 }
 
 body.high, body.low {
