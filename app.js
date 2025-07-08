@@ -2,7 +2,7 @@
 const DEFAULTS = {
   high: 20,
   low: 10,
-  rounds: 8
+  rounds: 5
 };
 
 let settings = { ...DEFAULTS };

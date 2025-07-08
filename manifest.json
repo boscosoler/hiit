@@ -1,11 +1,11 @@
 {
-  "name": "HIIT Interval Timer",
-  "short_name": "HIIT Timer",
+  "name": "Simple HIIT - Temporizador de Intervalos",
+  "short_name": "Simple HIIT",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ff4d4d",
-  "theme_color": "#ff4d4d",
-  "description": "A simple HIIT interval training timer.",
+  "background_color": "#f26a8d",
+  "theme_color": "#f26a8d",
+  "description": "Temporizador simple para entrenamiento por intervalos",
   "icons": [
     {
       "src": "icon-192.png",
