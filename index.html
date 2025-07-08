@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>HIIT Simple - Temporizador de Intervalos</title>
+</head>
+<body>
+  <div class="container">
+    <button id="settings-btn" class="settings-btn" aria-label="Settings">⚙️</button>
+    <div class="mode-label" id="mode-label">Alta Intensidad</div>
+    <div class="timer" id="timer">00:20</div>
+    <div class="controls">
+      <button id="play-pause-btn" class="control-btn">▶️</button>
+      <button id="reset-btn" class="control-btn">⟲</button>
+    </div>
+    <div class="rounds-left" id="rounds-left">Rondas restantes: 8</div>
+  </div>
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <!--<h2>Personalizar Intervalos</h2>-->
+      <label>Alta Intensidad (segundos): <input type="number" id="high-input" min="1" max="300"></label>
+      <label>Baja Intensidad (segundos): <input type="number" id="low-input" min="1" max="300"></label>
+      <label>Rondas: <input type="number" id="rounds-input" min="1" max="99"></label>
+      <div class="modal-actions">
+        <button id="save-settings-btn">Guardar</button>
+        <button id="close-settings-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
